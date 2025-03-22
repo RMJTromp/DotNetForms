@@ -1,8 +1,8 @@
 ﻿using DotNetForms.Input.Context;
 namespace DotNetForms.Input;
 
-public abstract class BaseInput<Instance, T>(InputContext<T> ctx)
-    where Instance : BaseInput<Instance, T> {
+public abstract class BaseInput<TInstance, T>(InputContext<T> ctx)
+    where TInstance : BaseInput<TInstance, T> {
 
     public string Label => ctx.Label;
     public T? DefaultValue => ctx.DefaultValue;
@@ -23,25 +23,25 @@ public abstract class BaseInput<Instance, T>(InputContext<T> ctx)
             if (value == null && !Nullable) return;
 
             _value = value;
-            OnChange?.Invoke((Instance) this);
+            OnChange?.Invoke((TInstance) this);
         }
     }
     
-    public event Action<Instance>? OnChange;
-    public event Action<Instance>? OnFocus;
-    public event Action<Instance>? OnBlur;
-    public event Action<Instance, ConsoleKeyInfo>? OnKeyPress;
+    public event Action<TInstance>? OnChange;
+    public event Action<TInstance>? OnFocus;
+    public event Action<TInstance>? OnBlur;
+    public event Action<TInstance, ConsoleKeyInfo>? OnKeyPress;
 
     public void TriggerFocus() {
-        OnFocus?.Invoke((Instance) this);
+        OnFocus?.Invoke((TInstance) this);
     }
 
     public void TriggerBlur() {
-        OnBlur?.Invoke((Instance) this);
+        OnBlur?.Invoke((TInstance) this);
     }
 
     public void TriggerKeyPress(ConsoleKeyInfo key) {
-        OnKeyPress?.Invoke((Instance) this, key);
+        OnKeyPress?.Invoke((TInstance) this, key);
     }
 
 }
