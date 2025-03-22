@@ -1,6 +1,6 @@
-﻿namespace DotNetForms.Input.Context;
+﻿namespace DotNetForms.Input.Properties;
 
-public class NumberInputContext : InputContext<int> {
+public class NumberInputProperties : InputProperties<int> {
     
     public int MinValue = int.MinValue;
     public int MaxValue = int.MaxValue;

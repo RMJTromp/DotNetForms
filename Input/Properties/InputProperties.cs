@@ -1,6 +1,6 @@
-﻿namespace DotNetForms.Input.Context;
+﻿namespace DotNetForms.Input.Properties;
 
-public class InputContext<T> {
+public class InputProperties<T> {
 
     public string Label = "";
     public string? Description = null;

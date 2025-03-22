@@ -1,4 +1,4 @@
-﻿namespace DotNetForms.Input.Context;
+﻿namespace DotNetForms.Input.Properties;
 
 public enum TextInputType {
 

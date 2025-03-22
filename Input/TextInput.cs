@@ -1,13 +1,13 @@
-﻿using DotNetForms.Input.Context;
+﻿using DotNetForms.Input.Properties;
 
 namespace DotNetForms.Input;
 
-public class TextInput(TextInputContext context) : BaseInput<TextInput, string>(context) {
+public class TextInput(TextInputProperties properties) : BaseInput<TextInput, string>(properties) {
 
-    public int MinLength => context.MinLength;
-    public int MaxLength => context.MaxLength;
-    public string? Pattern => context.Pattern;
-    public TextInputType Type => context.Type;
+    public int MinLength => properties.MinLength;
+    public int MaxLength => properties.MaxLength;
+    public string? Pattern => properties.Pattern;
+    public TextInputType Type => properties.Type;
 
     public override string DisplayValue {
         get {

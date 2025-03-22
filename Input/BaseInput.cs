@@ -1,7 +1,8 @@
-﻿using DotNetForms.Input.Context;
+﻿using DotNetForms.Input.Properties;
+
 namespace DotNetForms.Input;
 
-public abstract class BaseInput<TInstance, T>(InputContext<T> ctx)
+public abstract class BaseInput<TInstance, T>(InputProperties<T> ctx)
     where TInstance : BaseInput<TInstance, T> {
 
     public string Label => ctx.Label;

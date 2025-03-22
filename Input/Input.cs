@@ -1,4 +1,4 @@
-﻿using DotNetForms.Input.Context;
+﻿using DotNetForms.Input.Properties;
 
 namespace DotNetForms.Input;
 
@@ -14,7 +14,7 @@ public class Input {
         int maxLength = int.MaxValue,
         bool nullable = false,
         bool required = false
-    ) => new(new TextInputContext {
+    ) => new(new TextInputProperties {
         Label = label,
         Description = description,
         Placeholder = placeholder,
@@ -37,7 +37,7 @@ public class Input {
         int maxLength = int.MaxValue,
         bool nullable = false,
         bool required = false
-    ) => new(new TextInputContext {
+    ) => new(new TextInputProperties {
         Label = label,
         Description = description,
         Placeholder = placeholder,
@@ -60,7 +60,7 @@ public class Input {
         int maxLength = int.MaxValue,
         bool nullable = false,
         bool required = false
-    ) => new(new TextInputContext {
+    ) => new(new TextInputProperties {
         Label = label,
         Description = description,
         Placeholder = placeholder,
@@ -73,8 +73,8 @@ public class Input {
         Type = TextInputType.Password
     });
 
-    public static NumberInput Number(Action<NumberInputContext> action) {
-        var ctx = new NumberInputContext();
+    public static NumberInput Number(Action<NumberInputProperties> action) {
+        var ctx = new NumberInputProperties();
         ctx.DefaultValue = 0;
         action(ctx);
         ctx.Nullable = false;

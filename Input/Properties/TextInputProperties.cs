@@ -1,6 +1,6 @@
-﻿namespace DotNetForms.Input.Context;
+﻿namespace DotNetForms.Input.Properties;
 
-public class TextInputContext : InputContext<string> {
+public class TextInputProperties : InputProperties<string> {
 
     public int MinLength = 0;
     public int MaxLength = int.MaxValue;

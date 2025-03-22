@@ -1,4 +1,4 @@
-﻿using DotNetForms.Input.Context;
+﻿using DotNetForms.Input.Properties;
 
 namespace DotNetForms.Input;
 
@@ -12,10 +12,10 @@ public class NumberInput : BaseInput<NumberInput, int> {
     public int MaxLength => _maxValue;
     public int Step => _step;
     
-    public NumberInput(NumberInputContext context) : base(context) {
-        _minValue = context.MinValue;
-        _maxValue = context.MaxValue;
-        _step = context.Step;
+    public NumberInput(NumberInputProperties properties) : base(properties) {
+        _minValue = properties.MinValue;
+        _maxValue = properties.MaxValue;
+        _step = properties.Step;
     }
     
 }
